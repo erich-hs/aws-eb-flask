@@ -136,7 +136,7 @@ This will set up your complete ElasticBeanstalk Environment within your initiali
 
 ## GitHub Actions and requirements.txt
 ---
-You can now set your Makefile fore GitHub actions. You can find a [sample Makefile](Makefile) in this repository. Remember to update the `eb deploy` command with your app name.
+You can now set your Makefile for GitHub actions. You can find a [sample Makefile](Makefile) in this repository. Remember to update the `eb deploy` command with your app name.
 
 Before running a `make all` make sure to include these extra packages to your requirements.txt according to your Makefile:
 ```
