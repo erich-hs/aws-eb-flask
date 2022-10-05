@@ -101,7 +101,7 @@ zipp==3.8.1
 ```
 
 ## Flask Application
-* Develop your base Flask Application. A simple running example [flask_app.py](flask_app.py) from this repository.
+* Develop your base Flask Application. You can refer to the simple running example [flask_app.py](flask_app.py) from this repository.
 * You can now run locally and test your `flask_app.py`
 ```c
 $ python flask_app.py
@@ -117,7 +117,7 @@ $ curl http://127.0.0.1:5000/echo/Erich
 ```
 
 ## ElasticBeanstalk Environment
-Before starting a new EB Environment, make sure that your current `.gitignore` or `.ebignore` file indicates that the EB CLI should ignore your current `.venv` folder when deploying. It will avoid pusshing your local virtual environment to your EB referenced GitHub repository, which would lead to conflicts.
+Before starting a new EB Environment, make sure that your current `.gitignore` or `.ebignore` file indicates that the EB CLI should ignore your current `.venv` folder when deploying. It will avoid pushing your local virtual environment to your EB referenced GitHub repository, which would lead to conflicts.
 
 Important: Note that if an `.ebignore` file isn't present, but a `.gitignore` is, the EB CLI ignores files specified in `.gitignore`. If `.ebignore` is present, the EB CLI doesn't read `.gitignore`.
 * Initializie your EB project
@@ -130,10 +130,11 @@ Application eb-flask-app has been created.
 eb create eb-flask-app-env
 ```
 This will set up your complete ElasticBeanstalk Environment within your initialized project with:
-* EC2 Instances
+* EC2 Instance
 * Load Balancer
 * Auto Scaling
 * CloudWatch Alarm
+* S3 Bucket
 * Corresponding Security Groups
 
 ## GitHub Actions
