@@ -31,6 +31,8 @@ $ echo 'export PATH="/home/ec2-user/.ebcli-virtual-env/executables:$PATH"' >> ~/
 * You can now check your currently installed ElasticBeanstalk CLI and current Python Interpreter
 ```c
 $ eb --version
+```
+```c
 EB CLI 3.20.3 (Python 3.7.1)
 ```
 ---
@@ -79,7 +81,6 @@ $ touch requirements.txt
 ```bash
 $ python3 -m venv venv
 $ source venv/bin/activate
-(venv) ec2-user:~/environment/aws-eb-flask (main) $
 ```
 * Install the working version of Flask for your application
 ```c
@@ -89,6 +90,8 @@ $ pip install flask==2.0.3
 ```c
 $ pip freeze > requirements.txt
 $ cat requirements.txt
+```
+```c
 click==8.1.3
 Flask==1.0.2
 importlib-metadata==5.0.0
@@ -119,15 +122,14 @@ $ curl http://127.0.0.1:5000/echo/Erich
 ## ElasticBeanstalk Environment
 Before starting a new EB Environment, make sure that your current `.gitignore` or `.ebignore` file indicates that the EB CLI should ignore your current `.venv` folder when deploying. It will avoid pushing your local virtual environment to your EB referenced GitHub repository, which would lead to conflicts.
 
-Important: Note that if an `.ebignore` file isn't present, but a `.gitignore` is, the EB CLI ignores files specified in `.gitignore`. If `.ebignore` is present, the EB CLI doesn't read `.gitignore`.
+🔥🔥 **Important**: Note that if an `.ebignore` file isn't present, but a `.gitignore` is, the EB CLI ignores files specified in `.gitignore`. If `.ebignore` is present, the EB CLI doesn't read `.gitignore`.
 * Initializie your EB project
 ```c
-eb init -p python-3.7 eb-flask-app
-Application eb-flask-app has been created.
+$ eb init -p python-3.7 eb-flask-app
 ```
 * Create an EB environment
 ```c
-eb create eb-flask-app-env
+$ eb create eb-flask-app-env
 ```
 This will set up your complete ElasticBeanstalk Environment within your initialized project with:
 * EC2 Instance
@@ -138,7 +140,7 @@ This will set up your complete ElasticBeanstalk Environment within your initiali
 * Corresponding Security Groups
 
 ## GitHub Actions
-You can now set your Makefile for GitHub actions. You can find a [sample Makefile](Makefile) in this repository. Remember to update the `eb deploy` command with your app name.
+You can now set up your Makefile for GitHub actions. You can find a [sample Makefile](Makefile) in this repository. Remember to update the `eb deploy` command with your app name.
 
 Before running a `make all` make sure to include these extra packages to your requirements.txt according to your Makefile:
 ```
