@@ -1,9 +1,9 @@
 [![Python application test with Github Actions](https://github.com/erich-hs/aws-eb-flask/actions/workflows/main.yml/badge.svg)](https://github.com/erich-hs/aws-eb-flask/actions/workflows/main.yml)
 <div align="center">
 
-# Flask App Deployment with AWS ElasticBeanstalk
+# CD Flask App Deployment with AWS ElasticBeanstalk
 
-![AWS-EB-Flask](https://user-images.githubusercontent.com/77303576/194011905-240fb936-5960-4d5a-bc80-3a58a4e1d9ba.png)
+![AWS-EB-Flask](https://user-images.githubusercontent.com/77303576/194023053-9ddafe20-1c99-4c8c-9fe2-2db62921f411.png)
 
 Template repository for a Continuous Delivery Flask application deployment with AWS ElasticBeanstalk
 </div>
