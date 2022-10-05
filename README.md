@@ -10,7 +10,7 @@ Template repository for deploying a Continuous Delivery Flask application with A
 ## AWS Cloud9 Development Environment Setup
 ---
 * Initiate an AWS Cloud9 cloud IDE and cd to your environment folder
-```c
+```bash
 $ cd ~/environment/
 ```
 * Install the ElasticBeanstalk CLI from [AWS current setup](https://github.com/aws/aws-elastic-beanstalk-cli-setup)
@@ -19,7 +19,7 @@ $ git clone https://github.com/aws/aws-elastic-beanstalk-cli-setup.git
 $ python ./aws-elastic-beanstalk-cli-setup/scripts/ebcli_installer.py
 ```
 * Ensure `eb` is in `PATH`
-```c
+```bash
 $ echo 'export PATH="/home/ec2-user/.ebcli-virtual-env/executables:$PATH"' >> ~/.bash_profile && source ~/.bash_profile
 ```
 * You can now check your currently installed ElasticBeanstalk CLI and current Python Interpreter
@@ -39,7 +39,7 @@ Your identification has been saved in /home/ec2-user/.ssh/id_rsa.
 Your public key has been saved in /home/ec2-user/.ssh/id_rsa.pub.
 ```
 * Copy the public key. This is not a secret key and can be stored publicly
-```c
+```bash
 $ cat /home/ec2-user/.ssh/id_rsa.pub
 ```
 * Under your GitHub account set up a new SSH Authentication Key
@@ -51,7 +51,7 @@ $ cat /home/ec2-user/.ssh/id_rsa.pub
 ### For Cloud9 EC2 instances with existing SSH permissions
 ---
 * Clone your repository and cd to its root folder
-```c
+```bash
 $ git clone git@github.com:{your_github_username}/aws-eb-flask.git
 $ cd aws-eb-flask
 ```
@@ -63,7 +63,7 @@ $ cd aws-eb-flask
     * test_flask_app.py
     * Makefile
     * requirements.txt
-```c
+```bash
 $ touch flask_app.py
 $ touch test_flask_app.py
 $ touch Makefile
@@ -73,10 +73,10 @@ $ touch requirements.txt
 ## Virtual Environment and Basic Dependencies
 ---
 * Create a Python3 virtual environment and activate it
-```c
-$ python3 -m venv virt
-$ source virt/bin/activate
-(virt) ec2-user:~/environment/aws-eb-flask (main) $
+```bash
+$ python3 -m venv venv
+$ source venv/bin/activate
+(venv) ec2-user:~/environment/aws-eb-flask (main) $
 ```
 * Install the working version of Flask for your application
 ```c
@@ -105,7 +105,7 @@ zipp==3.8.1
 $ python flask_app.py
 ```
 * And on another terminal
-```
+```bash
 $ curl http://127.0.0.1:5000
 Continuous Delivery Demo!
 $ curl http://127.0.0.1:5000/echo/Erich
@@ -116,13 +116,9 @@ $ curl http://127.0.0.1:5000/echo/Erich
 
 ## ElasticBeanstalk Environment
 ---
-* Before starting a new EB Environment, create a `.ebignore` file to indicate that the EB CLI should ignore your current `.venv` folder when deploying.
-```c
-$ touch .ebignore
-```
-* Eddit with vim, nano, or with your IDE to insert venv folder
+* Before starting a new EB Environment, make sure that your current `.gitignore` or `.ebignore` file indicates that the EB CLI should ignore your current `.venv` folder when deploying. It will avoid pusshing your local virtual environment to your EB referenced GitHub repository, which would lead to conflicts.
 
-Important: Note that if `.ebignore` isn't present, but `.gitignore` is, the EB CLI ignores files specified in `.gitignore`. If `.ebignore` is present, the EB CLI doesn't read `.gitignore`.
+Important: Note that if an `.ebignore` file isn't present, but a `.gitignore` is, the EB CLI ignores files specified in `.gitignore`. If `.ebignore` is present, the EB CLI doesn't read `.gitignore`.
 * Initializie your EB project
 ```c
 eb init -p python-3.7 eb-flask-app
@@ -134,7 +130,7 @@ eb create eb-flask-app-env
 ```
 This will set up your complete ElasticBeanstalk Environment within your initialized project.
 
-## GitHub Actions and requirements.txt
+## GitHub Actions
 ---
 You can now set your Makefile for GitHub actions. You can find a [sample Makefile](Makefile) in this repository. Remember to update the `eb deploy` command with your app name.
 
@@ -146,3 +142,5 @@ black
 pytest-cov
 ```
 * Setup GitHub Actions
+
+Here is a [sample workflow](/.github/workflows) for Continuous Develivery with GitHub actions.
