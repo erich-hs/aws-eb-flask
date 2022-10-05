@@ -3,7 +3,7 @@
 
 # Flask App Deployment with AWS ElasticBeanstalk
 
-![AWS-EB-Flask](https://user-images.githubusercontent.com/77303576/194007980-eacc379a-2400-4804-86a0-fe340f857d3f.png)
+![AWS-EB-Flask](https://user-images.githubusercontent.com/77303576/194011905-240fb936-5960-4d5a-bc80-3a58a4e1d9ba.png)
 
 Template repository for a Continuous Delivery Flask application deployment with AWS ElasticBeanstalk
 </div>
