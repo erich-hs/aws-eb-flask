@@ -12,7 +12,7 @@ Template repository for a Continuous Delivery Flask application deployment with 
 ## GitHub Repository
 * Create a GitHub repository and:
     * Add a README.md and a .gitignore file with a Python template
-    * Copy your Github SSH link `git@github.com:[your_github_username]/aws-eb-flask.git` under 'Code > Clone > SSH'
+    * Copy your repository SSH link `git@github.com:[your_github_username]/aws-eb-flask.git` under 'Code > Clone > SSH'
 
 ## AWS Cloud9 Development Environment Setup
 * Initiate an AWS Cloud9 cloud IDE and cd to your environment folder
