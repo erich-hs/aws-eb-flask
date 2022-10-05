@@ -1,5 +1,13 @@
-# Sample Flask App Deployment with AWS ElasticBeanstalk deployment
-Template repository for deploying a Continuous Delivery Flask application with AWS ElasticBeanstalk
+[![Python application test with Github Actions](https://github.com/erich-hs/aws-eb-flask/actions/workflows/main.yml/badge.svg)](https://github.com/erich-hs/aws-eb-flask/actions/workflows/main.yml)
+
+<div align="center">
+
+# Flask App Deployment with AWS ElasticBeanstalk
+
+![AWS-EB-Flask](https://user-images.githubusercontent.com/77303576/194007980-eacc379a-2400-4804-86a0-fe340f857d3f.png)
+
+Template repository for a Continuous Delivery Flask application deployment with AWS ElasticBeanstalk
+</div>
 
 ## GitHub Repository
 ---
@@ -116,7 +124,7 @@ $ curl http://127.0.0.1:5000/echo/Erich
 
 ## ElasticBeanstalk Environment
 ---
-* Before starting a new EB Environment, make sure that your current `.gitignore` or `.ebignore` file indicates that the EB CLI should ignore your current `.venv` folder when deploying. It will avoid pusshing your local virtual environment to your EB referenced GitHub repository, which would lead to conflicts.
+Before starting a new EB Environment, make sure that your current `.gitignore` or `.ebignore` file indicates that the EB CLI should ignore your current `.venv` folder when deploying. It will avoid pusshing your local virtual environment to your EB referenced GitHub repository, which would lead to conflicts.
 
 Important: Note that if an `.ebignore` file isn't present, but a `.gitignore` is, the EB CLI ignores files specified in `.gitignore`. If `.ebignore` is present, the EB CLI doesn't read `.gitignore`.
 * Initializie your EB project
@@ -128,7 +136,12 @@ Application eb-flask-app has been created.
 ```c
 eb create eb-flask-app-env
 ```
-This will set up your complete ElasticBeanstalk Environment within your initialized project.
+This will set up your complete ElasticBeanstalk Environment within your initialized project with:
+* EC2 Instances
+* Load Balancer
+* Auto Scaling
+* CloudWatch Alarm
+* Corresponding Security Groups
 
 ## GitHub Actions
 ---
@@ -142,5 +155,7 @@ black
 pytest-cov
 ```
 * Setup GitHub Actions
-
-Here is a [sample workflow](/.github/workflows) for Continuous Develivery with GitHub actions.
+   * In your GitHub repository, under Actions, select `set up a workflow yourself`.
+   * Configure your main.yml file to make use of your Makefile scripts.
+ 
+Here is a [sample workflow](/.github/workflows/main.yml) for Continuous Develivery with GitHub actions.
