@@ -93,7 +93,7 @@ $ cat requirements.txt
 ```
 ```c
 click==8.1.3
-Flask==1.0.2
+Flask==2.0.3
 importlib-metadata==5.0.0
 itsdangerous==2.1.2
 Jinja2==3.1.2
